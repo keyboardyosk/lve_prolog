@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>СМЕХ В ПУСТОТЕ · LVE_6 v3.4</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="hud"></header>
+  <div id="main">
+    <section id="scene"></section>
+    <aside id="side">
+      <div id="observations"></div>
+      <div id="log"></div>
+      <div id="status"></div>
+    </aside>
+  </div>
+</div>
+<div id="modal" onclick="shadeClick(event)"><div class="modal" id="modal-box"></div></div>
+
+<!--
+  ПОРЯДОК СКРИПТОВ КРИТИЧЕН:
+    data   — константы, пулы
+    state  — состояние, save/load
+    engine — RNG, время, tick мира, генерация
+    logic  — диалоги, действия, бой
+    killer — скрытый убийца (нужен раньше logic, чем вызывается)
+    exam   — экзамен
+    economy— экономика, роль станции
+    render — сцены, модалки, HUD
+    pda    — КПК
+    final  — финал пролога
+    main   — точка входа
+-->
+<script src="js/data.js"></script>
+<script src="js/state.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/logic.js"></script>
+<script src="js/killer.js"></script>
+<script src="js/exam.js"></script>
+<script src="js/economy.js"></script>
+<script src="js/render.js"></script>
+<script src="js/pda.js"></script>
+<script src="js/final.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
